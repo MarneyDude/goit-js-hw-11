@@ -23,13 +23,19 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
 }
 
 main {
   flex-grow: 1;
 
-  background-image: url('/img/pngtree-abstract-orange-fiery-sparks-and-dark-gray-bonfire-smoke-with-fire-picture-image_15506219.jpg');
-  background-size: 100%;
+  background: linear-gradient(
+    to right bottom,
+    #a87d4b 25%,
+    #8c5a38 50%,
+    #6f3f28 75%,
+    #5a2d1b 100%
+  );
 }
 main:has(.back-link) {
   text-align: center;

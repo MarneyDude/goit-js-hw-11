@@ -108,5 +108,7 @@ function getMessage() {
 function modal() {
   const lightbox = new SimpleLightbox('.gallery__container a');
 
+  SimpleLightbox.defaults = {};
+
   lightbox.refresh();
 }

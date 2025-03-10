@@ -13,7 +13,7 @@ export const renderImages = (event) => {
 
   const loader = document.querySelector('.loader');
 
-  loader.style.display = 'block';
+  loader.classList.remove('loader-hidden');
 
   imagesRequest(inputValue)
     .then((response) => {
@@ -37,14 +37,16 @@ export const renderImages = (event) => {
             return `<li class='gallery__item'>
               <div class='gallery__container '>
                 <a href='${largeImageURL}'>
-                  <div class='image-wrapper'>
-                    <span class='loader'></span>
+                 
+                    <span class=' loader-position loader '></span>
                     <img
                       class='gallery__image'
                       src='${webformatURL}'
                       alt='${tags}'
+                      onload="this.previousElementSibling.style.visibility = 'hidden';" 
+                      onerror="this.previousElementSibling.visibility = 'hidden';" 
                     />
-                  </div>
+                 
                 </a>
 
                 <ul class='gallery_user-stats'>
@@ -80,11 +82,11 @@ export const renderImages = (event) => {
       modal();
     })
     .catch((error) => {
-      loader.style.display = 'none';
+      loader.classList.remove('loader-hidden');
       console.error('Error fetching data:', error);
     })
     .finally(() => {
-      loader.style.display = 'none';
+      loader.classList.add('loader-hidden');
     });
 
   event.target.reset();

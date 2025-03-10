@@ -1,0 +1,175 @@
+.search {
+}
+
+.search__form {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.25rem 0;
+  color: #808080;
+  max-width: 27.25rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.search__input {
+  flex-grow: 1;
+  max-width: 20rem;
+  border-radius: 0.25rem;
+  padding: 0.7rem 1rem;
+  outline: 2px solid transparent;
+  border: transparent;
+  transition: outline 250ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  background-color: wheat;
+}
+
+.search__input:hover {
+  outline: 2px solid black;
+}
+
+.search__input:active,
+.search__input:focus {
+  outline: 10px solid rgba(255, 255, 255, 0.137);
+}
+
+.search__button {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0.5rem 1.6rem;
+  background: transparent;
+  border: transparent;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: transform 250ms cubic-bezier(0.17, 0.67, 0.83, 0.67),
+    background 250ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.search__button:hover {
+  transform: translate(2%, -2%);
+  color: #ffbb00;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.gallery__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery__item {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  transition: transform 250ms cubic-bezier(0.17, 0.67, 0.83, 0.67),
+    background-color 250ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  background-color: rgba(0, 0, 0, 0.082);
+  border-radius: 1rem;
+}
+.gallery__item:hover {
+  transform: scale(1.03);
+  background-color: rgba(0, 0, 0, 0.534);
+}
+
+.gallery__image {
+  object-fit: cover;
+  width: 500px;
+  height: 300px;
+  border-radius: 1rem;
+}
+
+.gallery_user-stats {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  font-family: 'Big Shoulders Stencil', sans-serif;
+  font-size: 1.6rem;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.322);
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.6, 0.58, 0.59, 0.58);
+  border-radius: 1rem;
+  pointer-events: none;
+}
+
+.gallery__item:hover .gallery_user-stats {
+  opacity: 1;
+}
+.gallery_user-stats span {
+  font-size: 1.3rem;
+}
+
+.gallery__user-stats-item {
+  transition: color 400ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.gallery__user-stats-text {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: 0.7rem;
+  max-width: fit-content;
+  pointer-events: all;
+  cursor: default;
+}
+
+.gallery__user-stats-text:hover {
+  color: rgb(226, 155, 0);
+  pointer-events: all;
+}
+
+.loader {
+  display: block;
+  width: fit-content;
+  font-size: 48px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  margin: 0 auto;
+  display: none;
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 34px;
+  bottom: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  border-bottom-color: #ff3d00;
+  box-sizing: border-box;
+  animation: rotation 0.6s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
